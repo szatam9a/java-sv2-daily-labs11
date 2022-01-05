@@ -12,8 +12,8 @@ class HikingTest {
     @Test
     void getPlusElevationTest() {
         Hiking hiking = new Hiking();
-        Double[] test = {10.0,5.0,10.0,15.0};
-        List<Double> toTest = Arrays.asList(test);
-        assertEquals(10,hiking.getPlusElevation(toTest));
+
+        List<Double> toTest = List.of(10.0, 5.0, 10.0, 15.0);
+        assertEquals(10, hiking.getPlusElevation(toTest));
     }
 }
