@@ -7,20 +7,9 @@ public class Product {
     private int price;
     private LocalDate bestBefore;
 
-    public Product(Product product, boolean warranty) {
+    public Product(Product product,boolean warranty) {
         this.name = product.name;
         this.price = product.price;
-        LocalDate now = LocalDate.now();
-
-        if (warranty) {
-            this.bestBefore = LocalDate.of(now.getYear() + 3, now.getMonth(), now.getDayOfMonth());
-        } else {
-            if (now.getMonth().getValue() > 9) {
-                this.bestBefore = LocalDate.of(now.getYear(), now.getMonth().getValue() - 12 + 3, now.getDayOfMonth());
-            } else
-                this.bestBefore = LocalDate.of(now.getYear(), now.getMonth().getValue() + 3, now.getDayOfMonth());
-        }
-
     }
 
     public String getName() {
@@ -61,4 +50,5 @@ public class Product {
                 ", bestBefore=" + bestBefore +
                 '}';
     }
+
 }

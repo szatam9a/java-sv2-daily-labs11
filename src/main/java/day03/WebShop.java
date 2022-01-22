@@ -11,6 +11,7 @@ public class WebShop {
     public void userBuyProduct(String user, String product) {
         User userUser = findUser(user);
         Product productProduct = findProduct(product);
+
         if (userUser.getMoney() > productProduct.getPrice()) {
             if (userUser.getMoney() >= productProduct.getPrice() * 3) {
                 userUser.buyProduct(productProduct, true);
